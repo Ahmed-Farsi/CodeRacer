@@ -12,6 +12,5 @@ $tijd = 70;//seconds
 $berekening = $aantal_tekens/$tijd*60; 
 $TMP = round($berekening, 0);
 
-echo 'aantal tekens: ' . $aantal_tekens . ', TMP: ' . $TMP;
 
 ?>

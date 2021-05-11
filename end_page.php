@@ -7,6 +7,9 @@
     <title>Results</title>
 </head>
 <body>
-    
+    <?php
+    include 'berekening.php';
+    echo 'aantal tekens: ' . $aantal_tekens . ', TMP: ' . $TMP;
+    ?>
 </body>
 </html>
