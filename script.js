@@ -27,7 +27,7 @@ codeInputElement.addEventListener('input', () => {
 })
 
 function newPage() {
-    window.location.pathname = '/lol.php'
+    window.location.pathname = 'jarvis/Eindproject Jaar 1/Eindproject-Jaar--43bf4ba5-2573b47f/end_page.php'
 }
 
 fetch('code.txt')
