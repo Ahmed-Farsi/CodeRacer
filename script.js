@@ -49,7 +49,8 @@ function startTimer() {
     setInterval(() => {    
         timer.innerText = getTimerTime()  
         let value = timer.innerText
-        window.localStorage.setItem("time", value++)
+        // window.localStorage.setItem("time", value++)
+        document.cookie = `tijd=${value}`
     }, 1000)
 }
 function getTimerTime() {  

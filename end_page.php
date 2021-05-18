@@ -18,7 +18,7 @@
             <h2 class = "score"><?php
                 echo 'aantal tekens: ' . $aantal_tekens;
                 echo '<br>';
-                echo 'TMP: ' . $TMP;
+                echo 'TPM: ' . $TPM;
             ?></h2>
             <!-- <p><?php echo $tekens ?></P> -->
         </div>

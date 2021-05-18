@@ -8,7 +8,7 @@ $delete = array(" ","　","\t","\n","\r");
 $tekens = str_replace($delete ,'',$array);
 $aantal_tekens = strlen($tekens);
 
-$tijd = 10;//seconds
+$tijd = $_COOKIE["tijd"];//seconds
 $berekening = $aantal_tekens/$tijd*60; 
-$TMP = round($berekening, 0);
+$TPM = round($berekening, 0);
 ?>
