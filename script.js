@@ -26,13 +26,10 @@ codeInputElement.addEventListener('input', () => {
     if (correct) newPage()
 })
 
-function newPage() {
-    window.location.pathname = 'jarvis/Eindproject Jaar 1/Eindproject-Jaar--43bf4ba5-2573b47f/end_page.php'
-}
 
 fetch('code.txt')
-    .then(respose => respose.text())
-    .then(text => doStuff(text))
+.then(respose => respose.text())
+.then(text => doStuff(text))
 
 function doStuff(text) {
     const code = text
@@ -52,7 +49,7 @@ function startTimer() {
     setInterval(() => {    
         timer.innerText = getTimerTime()  
         let value = timer.innerText
-        localStorage["key"] = value
+        window.localStorage.setItem("time", value++)
     }, 1000)
 }
 function getTimerTime() {  
@@ -60,6 +57,12 @@ function getTimerTime() {
 }
 
 
+function newPage() {
+    const page = window.location.href
+    // console.log(location)
+    // document.location.href = `end_page.php?time=${value}`
+    window.location.replace("end_page.php")
+}
 
 
 // function getCode() {
