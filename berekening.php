@@ -11,6 +11,4 @@ $aantal_tekens = strlen($tekens);
 $tijd = 60;//seconds
 $berekening = $aantal_tekens/$tijd*60; 
 $TMP = round($berekening, 0);
-
-
 ?>

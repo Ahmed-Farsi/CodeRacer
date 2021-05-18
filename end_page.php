@@ -8,17 +8,6 @@
     <title>Results</title>
 </head>
 <body>
-    <!-- top -->
-    <div class="top">
-        <div class="menu">
-            <img src="icon/menu.png">
-            <p>Menu<p>
-        </div>
-        <div class="user">
-            <img src="icon/usericon.png">
-            <p>account</p>
-        </div>
-    </div>
     <?php
     include 'berekening.php';
     ?>
@@ -40,6 +29,11 @@
             <div class = "mid_rechts_twee">
             </div>  
         </div>
+    </div>
+    <br>
+    <!-- top -->
+    <div class="reset">
+        <a href="index.html"><img src="icon/reset.png"></a>
     </div>
 </body>
 </html>

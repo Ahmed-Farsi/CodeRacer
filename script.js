@@ -27,7 +27,7 @@ codeInputElement.addEventListener('input', () => {
 })
 
 function newPage() {
-    window.location.pathname = '/lol.php'
+    window.location.pathname = '/end_page.php'
 }
 
 fetch('code.txt')
