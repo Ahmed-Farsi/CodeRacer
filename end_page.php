@@ -19,6 +19,8 @@
                 echo 'aantal tekens: ' . $aantal_tekens;
                 echo '<br>';
                 echo 'TPM: ' . $TPM;
+                echo '<br>';
+                echo 'High Score is ' . $_COOKIE["highScore"];   
             ?></h2>
             <!-- <p><?php echo $tekens ?></P> -->
         </div>
