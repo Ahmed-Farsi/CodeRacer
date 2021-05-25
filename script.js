@@ -44,17 +44,17 @@ function doStuff(text) {
 }
 let startTime
 function startTimer() {  
-    timerElement.innerText = 0  
-    startTime = new Date()  
-    setInterval(() => {    
-        timer.innerText = getTimerTime()  
-        let value = timer.innerText
-        // window.localStorage.setItem("time", value++)
+    timerElement.innerText = 0
+    startTime = new Date()
+    setInterval(() => {
+        timer.innerText = getTimerTime()
+        let value = timer.innerText / 100;
         document.cookie = `tijd=${value}`
-    }, 1000)
+    }, 10)
 }
+
 function getTimerTime() {  
-    return Math.floor((new Date() - startTime) / 1000)
+    return Math.floor((new Date() - startTime) / 10)
 }
 
 
