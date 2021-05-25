@@ -27,11 +27,24 @@ codeInputElement.addEventListener('input', () => {
 })
 
 
-fetch('code.txt')
-.then(respose => respose.text())
-.then(text => doStuff(text))
 
-function doStuff(text) {
+
+function Hidecode() {
+    var button = document.getElementsByClassName("front-button-inner");
+    
+    if (button.clicked)   {
+
+    document.getElementsByClassName("codeDisplay").style.display = ("none");
+
+    } else {
+     fetch('code.txt')
+    .then(respose => respose.text())
+    .then(text => doStuff(text))
+    }
+  }
+
+
+    function doStuff(text) {
     const code = text
     codeDisplayElement.innerHTML = ''
     code.split('').forEach(character => {
@@ -40,7 +53,6 @@ function doStuff(text) {
         codeDisplayElement.appendChild(characterSpan)
     })
     codeInputElement.value = null
-    startTimer()
 }
 let startTime
 function startTimer() {  
@@ -76,3 +88,7 @@ function newPage() {
 //     const code = getCode()
 //     codeDisplayElement.innerHTML = code
 // }
+
+
+
+
