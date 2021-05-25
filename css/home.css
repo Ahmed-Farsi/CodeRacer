@@ -17,6 +17,9 @@ body,
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #c5c6c7;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -58,4 +61,25 @@ body,
 .incorrect {
   color: red;
   text-decoration: underline;
+}
+
+.front-button-inner {
+  display: flex;
+  justify-content: center;
+  text-transform: capitalize;
+  min-width: 160px;
+  padding: 0 13px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  background: #06c5c5;
+  border-radius: 10px;
+  border: solid 3px #07706b;
+  border-width: 1px 1px 4px;
+  text-shadow: 1px 1px #505050;
+  cursor: pointer;
+  color: #fff;
+  
 }
