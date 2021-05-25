@@ -44,4 +44,7 @@ int main() {
    return 0;
 }', 'C');
 
+Create table `leaderBoard`(
+    score int (100) NOT NULL
+);
 

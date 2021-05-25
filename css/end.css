@@ -2,7 +2,7 @@ body {
     background-color: #1F2833;
 }
 
-.reset {
+.reset, h1 {
     display: flex;
     justify-content: center;
 }
@@ -27,6 +27,20 @@ body {
     justify-content:center;
 }
 
+.leaderboard {
+    display: flex;
+    justify-content: center;
+}
+
+th, td{
+    border: 1px solid;
+}
+
+.me {
+    background-color: yellow;
+}
+
+
 .mid_links{
     height: 500px;
     width: 200px;
@@ -45,16 +59,10 @@ body {
     flex-direction: column;
 }
 
-.mid_rechts_een {
+.mid_rechts {
     border-style: solid;
     background-color: #45A29E;
     margin-bottom: 20px;
-    flex-grow: 1;
-}
-
-.mid_rechts_twee {
-    border-style: solid;
-    background-color: #45A29E;
     flex-grow: 1;
 }
 

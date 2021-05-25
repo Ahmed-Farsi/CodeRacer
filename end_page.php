@@ -9,7 +9,14 @@
 </head>
 <body>
     <?php
+    include 'connect.php';
     include 'berekening.php';
+    if ($TPM != $_COOKIE["user"]) {
+        $sql = "INSERT INTO leaderboard (score) VALUES(:score)";
+        $pdo->prepare($sql)->execute([
+            ':score' => $TPM
+        ]);
+    }  
     ?>
     <!-- midden -->
     <h1 class = "title">Jouw score:</h1>
@@ -22,18 +29,45 @@
                 echo '<br>';
                 echo 'High Score is ' . $_COOKIE["highScore"];   
             ?></h2>
-            <!-- <p><?php echo $tekens ?></P> -->
         </div>
 
         <div class = "mid_rechts">
-            <div class = "mid_rechts_een">
-            </div> 
-            <div class = "mid_rechts_twee">
-            </div>  
+                <h1>Leader Board</h1>
+                <table class = 'leaderboard'>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Score(TPM)</th>
+                    </tr>
+                    <?php
+                        $num = 0;
+                        $result = $pdo->query('SELECT * FROM leaderboard ORDER BY score DESC');
+                        While ($row = $result->fetch()) {
+                        $num += 1;
+                        if ($row['score'] == $TPM) {
+                        ?>
+                            <tr class='me'>
+                                <td><?php echo $num ?></td>
+                                <td><?php echo $row['score'] ?></td>
+                            </tr>
+                        <?php
+                        } else {
+                        ?>
+                            <tr>
+                                <td><?php echo $num ?></td>
+                                <td><?php echo $row['score'] ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                            
+                        <?php
+                            }
+                    ?>
+                </table>
         </div>
     </div>
     <br>
-    <!-- top -->
+    <!-- footer -->
     <div class="reset">
         <a href="index.php"><img src="icon/reset.png"></a>
     </div>
