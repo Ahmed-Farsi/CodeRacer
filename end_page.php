@@ -35,7 +35,7 @@
     <br>
     <!-- top -->
     <div class="reset">
-        <a href="index.html"><img src="icon/reset.png"></a>
+        <a href="index.php"><img src="icon/reset.png"></a>
     </div>
 </body>
 </html>
