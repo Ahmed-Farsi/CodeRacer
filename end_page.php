@@ -22,26 +22,32 @@
     <h1 class = "title">Jouw score:</h1>
     <div class="mid">
         <div class = "mid_links">
-            <div class = "mid_links_een">
+            <div class = "mid_links_klein">
                 <h2><?php echo 'aantal tekens'; ?></h2>
                 <h1><?php echo $aantal_tekens; ?></h1>
             </div>
 
-            <div class = "mid_links_twee">
+            <div class = "mid_links_klein">
             <h2><?php echo 'TPM'?></h2>
             <h1><?php echo $TPM; ?></h1>
             </div>
 
-            <div class = "mid_Links_drie">
+            <div class = "mid_links_klein">
             <h2><?php
                 $result = $pdo->query('SELECT MAX(score) FROM leaderboard');
                 While ($row = $result->fetch()) {
                 ?>
                     <h2><?php echo 'High Score'; ?></h2>
-                    <h1><?php echo $row['MAX(score)']; ?></h1> 
+                    <h1><?php echo $row['MAX(score)']; ?></h1>
                 <?php
                 }  
             ?></h2>
+            </div>
+
+            <div class = "mid_links_klein">
+                <h2><?php echo 'tijd'?></h2>
+                <h1><?php echo $_COOKIE['tijd']; ?></h1>
+                <p>Seconds</p>
             </div>
         </div>
 

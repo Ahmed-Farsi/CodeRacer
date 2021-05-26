@@ -59,11 +59,10 @@ h2 {
     align-items: center;
 }
 
-.mid_links_een, .mid_links_twee, .mid_Links_drie {
-    margin-left: 10%;
+.mid_links_klein {
+    margin-left: 3%;
     width:20%;
     height:30%;
-    border-style: solid;
     background-color: #45A29E;
     text-align: center;
 }
