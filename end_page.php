@@ -22,17 +22,31 @@
     <h1 class = "title">Jouw score:</h1>
     <div class="mid">
         <div class = "mid_links">
-            <h2 class = "score"><?php
-                echo 'aantal tekens: ' . $aantal_tekens;
-                echo '<br>';
-                echo 'TPM: ' . $TPM;
-                echo '<br>';
-                echo 'High Score is ' . $_COOKIE["highScore"];   
+            <div class = "mid_links_een">
+                <h2><?php echo 'aantal tekens'; ?></h2>
+                <h1><?php echo $aantal_tekens; ?></h1>
+            </div>
+
+            <div class = "mid_links_twee">
+            <h2><?php echo 'TPM'?></h2>
+            <h1><?php echo $TPM; ?></h1>
+            </div>
+
+            <div class = "mid_Links_drie">
+            <h2><?php
+                $result = $pdo->query('SELECT MAX(score) FROM leaderboard');
+                While ($row = $result->fetch()) {
+                ?>
+                    <h2><?php echo 'High Score'; ?></h2>
+                    <h1><?php echo $row['MAX(score)']; ?></h1> 
+                <?php
+                }  
             ?></h2>
+            </div>
         </div>
 
         <div class = "mid_rechts">
-                <h1>Leader Board</h1>
+                <h1 class = "title_lb">Leader Board</h1>
                 <table class = 'leaderboard'>
                     <tr>
                         <th>Rank</th>

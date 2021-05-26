@@ -17,8 +17,4 @@ $cookie_value = $TPM;
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
 
-if ($TPM > $_COOKIE["highScore"]){
-    setcookie("highScore", $TPM);
-}
-
 ?>

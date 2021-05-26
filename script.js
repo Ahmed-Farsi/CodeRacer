@@ -37,15 +37,13 @@ function Hidecode() {
     document.getElementsByClassName("codeDisplay").style.display = ("none");
 
     } else {
-     fetch('txt/code.txt')
-    .then(respose => respose.text())
-    .then(text => doStuff(text))
+      doStuff()
     }
   }
 
 
-    function doStuff(text) {
-    const code = text
+    function doStuff() {
+    const code = document.getElementById('text').innerText;
     codeDisplayElement.innerHTML = ''
     code.split('').forEach(character => {
         const characterSpan = document.createElement('span')
