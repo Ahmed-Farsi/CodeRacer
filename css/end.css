@@ -2,14 +2,15 @@ body {
     background-color: #1F2833;
 }
 
-.reset {
+.reset, .title_lb{
     display: flex;
     justify-content: center;
+    color: #1F2833;
 }
 
 .mid , .menu , .user{
     display: flex;
-    flex-direction: row;
+    flex-direction: row;  
 }
 
 .title {
@@ -27,13 +28,43 @@ body {
     justify-content:center;
 }
 
+.leaderboard {
+    display: flex;
+    justify-content: center;
+}
+
+th, td{
+    border: 1px solid;
+    color: #1F2833;
+}
+
+.me {
+    background-color: yellow;
+}
+
+h2 {
+    color: #1F2833;
+}
+
 .mid_links{
+    display: flex;
+    flex-direction: row;
     height: 500px;
     width: 200px;
     border-style: solid;
-    background-color: #45A29E;
+    background-color: #c5c6c7;
     margin-left: 20px;
     flex-grow: 3;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.mid_links_klein {
+    margin-left: 3%;
+    width:20%;
+    height:30%;
+    background-color: #45A29E;
+    text-align: center;
 }
 
 .mid_rechts {
@@ -43,20 +74,12 @@ body {
     margin-left: 20px;
     flex-grow: 1;
     flex-direction: column;
-}
-
-.mid_rechts_een {
     border-style: solid;
-    background-color: #45A29E;
+    background-color: #c5c6c7;
     margin-bottom: 20px;
     flex-grow: 1;
 }
 
-.mid_rechts_twee {
-    border-style: solid;
-    background-color: #45A29E;
-    flex-grow: 1;
-}
 
 img {
     width: 50px;

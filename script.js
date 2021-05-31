@@ -37,15 +37,13 @@ function Hidecode() {
     document.getElementsByClassName("codeDisplay").style.display = ("none");
 
     } else {
-     fetch('code.txt')
-    .then(respose => respose.text())
-    .then(text => doStuff(text))
+      doStuff()
     }
   }
 
 
-    function doStuff(text) {
-    const code = text
+    function doStuff() {
+    const code = document.getElementById('text').innerText;
     codeDisplayElement.innerHTML = ''
     code.split('').forEach(character => {
         const characterSpan = document.createElement('span')
@@ -60,8 +58,6 @@ function startTimer() {
     startTime = new Date()
     setInterval(() => {
         timer.innerText = getTimerTime()
-        let value = timer.innerText / 100;
-        document.cookie = `tijd=${value}`
     }, 10)
 }
 
@@ -71,6 +67,9 @@ function getTimerTime() {
 
 
 function newPage() {
+    let value = timer.innerText / 100;
+    document.cookie = `tijd=${value}`
+    console.log(`tijd=${value}`)
     const page = window.location.href
     // console.log(location)
     // document.location.href = `end_page.php?time=${value}`

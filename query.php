@@ -1,13 +1,6 @@
 <?php
-$host = 'localhost';
-$db = 'typegame';
-$user = 'root';
-$password = '';
-$charset = 'utf8mb4';
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$pdo = new PDO($dsn, $user, $password);
+include 'connect.php'
 ?>
-
 
 <?php
 $result = $pdo->query('SELECT text FROM code');
@@ -19,4 +12,3 @@ While ($row = $result->fetch()) {
 header("Content-Type: text/plain");
 var_dump($to_encode);
 ?>
-

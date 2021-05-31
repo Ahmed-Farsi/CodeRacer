@@ -13,10 +13,13 @@
     <div class="container">
         <div class="code-display" id="codeDisplay">Druk op de knop om te starten</div>
         <textarea id="codeInput" class="code-input" autofocus></textarea> 
-                <button  class="front-button-inner" onclick="startTimer();Hidecode()" >Start</button>
+        <button  class="front-button-inner" onclick="startTimer();Hidecode()" >Start</button>
+        <?php include'connect.php';
+        $i = rand(1,5);
+        $result = $pdo->query('SELECT * FROM code WHERE id =' . $i);
+        While ($row = $result->fetch()) {
+        ?>
+        <pre id="text" hidden><code><?php echo htmlspecialchars($row['text']);} ?></code></pre>
     </div>   
-       
-       
-        
 </body>
 </html>
