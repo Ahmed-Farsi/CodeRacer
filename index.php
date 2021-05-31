@@ -15,14 +15,15 @@
         <textarea id="codeInput" class="code-input" autofocus></textarea> 
         <button  class="front-button-inner" onclick="startTimer();Hidecode()" >Start</button>
         <?php include'connect.php';
-        $i = rand(1,5);
+        $i = rand(1 , 5);
         $cookie_name = "id";
         $cookie_value = $i;
         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
         $result = $pdo->query('SELECT * FROM code WHERE id =' . $i);
-        While ($row = $result->fetch()) {
-        ?>
-        <pre id="text" hidden><code><?php echo htmlspecialchars($row['text']);} ?></code></pre>
+        while ($row = $result->fetch()) {
+            ?>
+    <pre id="text" hidden><code><?php echo htmlspecialchars($row['text']); 
+        }?></code></pre>
     </div>   
 </body>
 </html>

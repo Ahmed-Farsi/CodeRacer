@@ -1,10 +1,12 @@
 const codeDisplayElement = document.getElementById('codeDisplay')
 const codeInputElement = document.getElementById('codeInput')
 const timerElement = document.getElementById('timer')
+const chararray = []
 
 codeInputElement.addEventListener('input', () => {
     const arrayCode = codeDisplayElement.querySelectorAll('span')
     const arrayValue = codeInputElement.value.split('')
+    
     let correct = true
     arrayCode.forEach((characterSpan, index) => {
         const character = arrayValue[index]
@@ -13,7 +15,7 @@ codeInputElement.addEventListener('input', () => {
             characterSpan.classList.remove('incorrect')
             correct = false
         }
-        else if (character === characterSpan.innerText) {
+        else if (character === chararray[index]) {
             characterSpan.classList.add('correct')
             characterSpan.classList.remove('incorrect')
         }   else {
@@ -46,7 +48,9 @@ function Hidecode() {
     const code = document.getElementById('text').innerText;
     codeDisplayElement.innerHTML = ''
     code.split('').forEach(character => {
+        console.log(`char: ${character} = utf-16: ${character.codePointAt(0)}`);
         const characterSpan = document.createElement('span')
+        chararray.push(character)
         characterSpan.innerText = character
         codeDisplayElement.appendChild(characterSpan)
     })
