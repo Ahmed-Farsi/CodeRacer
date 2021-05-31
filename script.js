@@ -63,7 +63,7 @@ function startTimer() {
         if (milliseconds <= 9) {
             milliseconds = `${milliseconds}`
         }
-        timer.innerText = `${seconds} . ${milliseconds}`
+        timer.innerText = `${seconds}.${milliseconds}`
     }, 10)
 }
 
@@ -73,7 +73,7 @@ function getTimerTime() {
 
 
 function newPage() {
-    let value = timer.innerText / 100;
+    let value = timer.innerHTML;
     document.cookie = `tijd=${value}`
     console.log(`tijd=${value}`)
     const page = window.location.href
