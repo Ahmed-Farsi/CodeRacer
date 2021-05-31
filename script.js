@@ -57,7 +57,13 @@ function startTimer() {
     timerElement.innerText = 0
     startTime = new Date()
     setInterval(() => {
-        timer.innerText = getTimerTime()
+        const tijd = getTimerTime()
+        const seconds = Math.floor(tijd / 100)
+        const milliseconds = tijd % 100
+        if (milliseconds <= 9) {
+            milliseconds = `${milliseconds}`
+        }
+        timer.innerText = `${seconds} . ${milliseconds}`
     }, 10)
 }
 
