@@ -1,9 +1,8 @@
 <?php
-$array = '<?php
-for ($i = 10; $i >= 1; $i--) {
-    echo $i . PHP_EOL;
+$result = $pdo->query('SELECT * FROM code WHERE id = 4');
+While ($row = $result->fetch()) {
+    $array = $row['text'];
 }
-?>';
 $delete = array(" ","　","\t","\n","\r");
 $tekens = str_replace($delete ,'',$array);
 $aantal_tekens = strlen($tekens);

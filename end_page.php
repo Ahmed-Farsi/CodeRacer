@@ -47,7 +47,7 @@
             <div class = "mid_links_klein">
                 <h2><?php echo 'tijd'?></h2>
                 <h1><?php echo $_COOKIE['tijd']; ?></h1>
-                <p>Seconds</p>
+                <p>Seconden</p>
             </div>
         </div>
 
