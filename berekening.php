@@ -1,5 +1,5 @@
 <?php
-$result = $pdo->query('SELECT * FROM code WHERE id = 4');
+$result = $pdo->query('SELECT * FROM code WHERE id =' . $_COOKIE['id']);
 While ($row = $result->fetch()) {
     $array = $row['text'];
 }
