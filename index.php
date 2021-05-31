@@ -16,6 +16,9 @@
         <button  class="front-button-inner" onclick="startTimer();Hidecode()" >Start</button>
         <?php include'connect.php';
         $i = rand(1,5);
+        $cookie_name = "id";
+        $cookie_value = $i;
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
         $result = $pdo->query('SELECT * FROM code WHERE id =' . $i);
         While ($row = $result->fetch()) {
         ?>
