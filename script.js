@@ -44,6 +44,7 @@ function Hidecode() {
 
     } else {
       doStuff()
+      document.getElementById("codeInput").focus();
     }
   }
 
