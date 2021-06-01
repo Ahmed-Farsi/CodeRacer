@@ -28,8 +28,8 @@
             </div>
 
             <div class = "mid_links_klein">
-            <h2><?php echo 'TPM'?></h2>
-            <h1><?php echo $TPM; ?></h1>
+                <h2><?php echo 'TPM'?></h2>
+                <h1><?php echo $TPM; ?></h1>
             </div>
 
             <div class = "mid_links_klein">
