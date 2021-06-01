@@ -11,6 +11,9 @@
     <?php
     include 'connect.php';
     include 'berekening.php';
+    if (empty($_COOKIE["user"])){
+        header("Refresh:0");
+    }
     if ($TPM != $_COOKIE["user"]) {
         $sql = "INSERT INTO leaderboard (score) VALUES(:score)";
         $pdo->prepare($sql)->execute([
