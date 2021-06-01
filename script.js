@@ -8,6 +8,10 @@ codeInputElement.addEventListener('input', () => {
     let correct = true
     arrayCode.forEach((characterSpan, index) => {
         const character = arrayValue[index]
+        if (character === ' ') {
+            characterSpan.classList.add('correct')
+            characterSpan.classList.remove('incorrect')
+        }
         if (character == null) {
             characterSpan.classList.remove('correct')
             characterSpan.classList.remove('incorrect')

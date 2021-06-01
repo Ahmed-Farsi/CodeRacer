@@ -11,7 +11,7 @@ Create table `code`(
 Insert into `code` (`text` ,`taal`) values
 ('<?php
 for ($i = 10; $i >= 1; $i--) {
-echo $i . PHP_EOL;
+    echo $i . PHP_EOL;
 }
 ?>', 'PHP'),
 ('<?php
@@ -34,14 +34,14 @@ var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
 var text = "";
 var i;
 for (i = 0; i < cars.length; i++) {
-  text += cars[i] + "<br>";
+    text += cars[i] + "<br>";
 }
 document.getElementById("demo").innerHTML = text;
 </script>', 'JS'),
 ('#include <stdio.h>
 int main() {
-   printf("Hello, World!");
-   return 0;
+    printf("Hello, World!");
+    return 0;
 }', 'C');
 
 Create table `leaderBoard`(
