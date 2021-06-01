@@ -81,5 +81,7 @@ body,
   text-shadow: 1px 1px #505050;
   cursor: pointer;
   color: #fff;
-  
+}
+span {
+  white-space: pre;
 }
