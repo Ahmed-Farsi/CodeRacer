@@ -83,7 +83,7 @@ function newPage() {
     const page = window.location.href
     // console.log(location)
     // document.location.href = `end_page.php?time=${value}`
-    window.location.replace("end_page.php")
+    window.location.replace("end_page.php?do=display")
 }
 
 

@@ -45,6 +45,8 @@ int main() {
 }', 'C');
 
 Create table `leaderBoard`(
-    score int (100) NOT NULL
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    score int (100) NOT NULL,
+    naam varchar (50) NOT NULL
 );
 
