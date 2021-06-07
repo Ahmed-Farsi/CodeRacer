@@ -49,4 +49,7 @@ Create table `leaderBoard`(
     score int (100) NOT NULL,
     naam varchar (50) NOT NULL
 );
+ 
+Insert into `leaderBoard`(score, naam)
+values (100, 'testuser');
 

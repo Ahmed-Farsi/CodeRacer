@@ -13,7 +13,7 @@
     include 'berekening.php';
 
     if (!empty($_GET["name"])) {
-        $sql = "INSERT INTO leaderboard (score, naam) VALUES(:score, :naam)";
+        $sql = "INSERT INTO leaderBoard (score, naam) VALUES(:score, :naam)";
         $pdo->prepare($sql)->execute([
             ':score' => $TPM,
             ':naam' => $_GET["name"]
@@ -54,7 +54,7 @@
 
                 <div class = "mid_links_klein">
                 <h2><?php
-                    $result = $pdo->query('SELECT MAX(score) FROM leaderboard');
+                    $result = $pdo->query('SELECT MAX(score) FROM leaderBoard');
                     While ($row = $result->fetch()) {
                     ?>
                         <h2><?php echo 'High Score'; ?></h2>
@@ -85,7 +85,7 @@
                     </tr>
                     <?php
                         $num = 0;
-                        $result = $pdo->query('SELECT * FROM leaderboard ORDER BY score DESC');
+                        $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
                         While ($row = $result->fetch()) {
                         $num += 1;
                         if ($row['score'] == $TPM) {

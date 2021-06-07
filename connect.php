@@ -1,4 +1,5 @@
 <?php
+
 $host = 'localhost';
 $db = 'nsp';
 $user = 'nsp';
