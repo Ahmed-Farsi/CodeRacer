@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS `typegame`; 
-CREATE DATABASE `typegame`;
-USE `typegame`;
+DROP DATABASE IF EXISTS `nsp`; 
+CREATE DATABASE `nsp`;
+USE `nsp`;
 
 Create table `code`(
     id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,

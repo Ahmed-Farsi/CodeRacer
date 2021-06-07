@@ -10,5 +10,5 @@ $aantal_tekens = strlen($tekens);
 $tijd = $_COOKIE["tijd"];//seconds
 $berekening = ($aantal_tekens/$tijd)*60; 
 $TPM = round($berekening, 0);
-
+    
 ?>

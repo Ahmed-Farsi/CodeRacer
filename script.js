@@ -37,8 +37,10 @@ function Hidecode() {
     if (button.clicked)   {
 
     document.getElementsByClassName("codeDisplay").style.display = ("none");
+    document.getElementById('codeInput').style.display = 'none';
 
     } else {
+    document.getElementById('codeInput').style.display = 'block';
       doStuff()
     }
   }
