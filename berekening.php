@@ -10,8 +10,5 @@ $aantal_tekens = strlen($tekens);
 $tijd = $_COOKIE["tijd"];//seconds
 $berekening = ($aantal_tekens/$tijd)*60; 
 $TPM = round($berekening, 0);
-
-$cookie_name = "user";
-$cookie_value = $TPM;
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+    
 ?>

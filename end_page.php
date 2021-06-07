@@ -11,46 +11,67 @@
     <?php
     include 'connect.php';
     include 'berekening.php';
-    if (empty($_COOKIE["user"])){
-        header("Refresh:0");
-    }
-    if ($TPM != $_COOKIE["user"]) {
-        $sql = "INSERT INTO leaderboard (score) VALUES(:score)";
+
+    if (!empty($_GET["name"])) {
+        $sql = "INSERT INTO leaderBoard (score, naam) VALUES(:score, :naam)";
         $pdo->prepare($sql)->execute([
-            ':score' => $TPM
+            ':score' => $TPM,
+            ':naam' => $_GET["name"]
         ]);
-    }  
+        header('Location: end_page.php?do=hidden');
+    }
+    
     ?>
     <!-- midden -->
     <h1 class = "title">Jouw score:</h1>
     <div class="mid">
         <div class = "mid_links">
-            <div class = "mid_links_klein">
-                <h2><?php echo 'aantal tekens'; ?></h2>
-                <h1><?php echo $aantal_tekens; ?></h1>
-            </div>
+            <?php
+            if ($_GET["do"] !== "hidden") {
+                echo <<<EOF
+                    <div class = "mid_links_top">
+                    <a href='end_page.php?do=hidden'><img class='cancel' src="icon/cancel.png"></a>
+                    <form action="#" Method="GET">
+                        <label for="name">your name</label><br>
+                        <input type="text" id="name" name="name"><br>
+                        <input type="text" id="do" name="do" value="display" hidden>
+                        <input type="submit" value="verzenden">
+                    </form>
+                    </div>
+                EOF;
+            } 
+            ?>
+            <div class = "mid_links_mid">
+                <div class = "mid_links_klein">
+                    <h2><?php echo 'aantal tekens'; ?></h2>
+                    <h1><?php echo $aantal_tekens; ?></h1>
+                </div>
 
-            <div class = "mid_links_klein">
-                <h2><?php echo 'TPM'?></h2>
-                <h1><?php echo $TPM; ?></h1>
-            </div>
+                <div class = "mid_links_klein">
+                    <h2><?php echo 'TPM'?></h2>
+                    <h1><?php echo $TPM; ?></h1>
+                </div>
 
-            <div class = "mid_links_klein">
-            <h2><?php
-                $result = $pdo->query('SELECT MAX(score) FROM leaderboard');
-                While ($row = $result->fetch()) {
-                ?>
-                    <h2><?php echo 'High Score'; ?></h2>
-                    <h1><?php echo $row['MAX(score)']; ?></h1>
-                <?php
-                }  
-            ?></h2>
-            </div>
+                <div class = "mid_links_klein">
+                <h2><?php
+                    $result = $pdo->query('SELECT MAX(score) FROM leaderBoard');
+                    While ($row = $result->fetch()) {
+                    ?>
+                        <h2><?php echo 'High Score'; ?></h2>
+                        <h1><?php echo $row['MAX(score)']; ?></h1>
+                    <?php
+                    }  
+                ?></h2>
+                </div>
 
-            <div class = "mid_links_klein">
-                <h2><?php echo 'tijd'?></h2>
-                <h1><?php echo $_COOKIE['tijd']; ?></h1>
-                <p>Seconden</p>
+                <div class = "mid_links_klein">
+                    <h2><?php echo 'tijd'?></h2>
+                    <h1><?php echo $_COOKIE['tijd']; ?></h1>
+                    <p>Seconden</p>
+                </div>
+            </div>
+            <div class="reset">
+            <a href="index.php"><img class='reset' src="icon/reset.png"></a>
             </div>
         </div>
 
@@ -60,10 +81,11 @@
                     <tr>
                         <th>Rank</th>
                         <th>Score(TPM)</th>
+                        <th>name</th>
                     </tr>
                     <?php
                         $num = 0;
-                        $result = $pdo->query('SELECT * FROM leaderboard ORDER BY score DESC');
+                        $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
                         While ($row = $result->fetch()) {
                         $num += 1;
                         if ($row['score'] == $TPM) {
@@ -71,6 +93,7 @@
                             <tr class='me'>
                                 <td><?php echo $num ?></td>
                                 <td><?php echo $row['score'] ?></td>
+                                <td><?php echo $row['naam'] ?></td>
                             </tr>
                         <?php
                         } else {
@@ -78,6 +101,7 @@
                             <tr>
                                 <td><?php echo $num ?></td>
                                 <td><?php echo $row['score'] ?></td>
+                                <td><?php echo $row['naam'] ?></td>
                             </tr>
                         <?php
                         }
@@ -91,8 +115,5 @@
     </div>
     <br>
     <!-- footer -->
-    <div class="reset">
-        <a href="index.php"><img src="icon/reset.png"></a>
-    </div>
 </body>
 </html>

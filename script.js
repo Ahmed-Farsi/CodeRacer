@@ -41,8 +41,10 @@ function Hidecode() {
     if (button.clicked)   {
 
     document.getElementsByClassName("codeDisplay").style.display = ("none");
+    document.getElementById('codeInput').style.display = 'none';
 
     } else {
+    document.getElementById('codeInput').style.display = 'block';
       doStuff()
       document.getElementById("codeInput").focus();
     }
@@ -88,7 +90,7 @@ function newPage() {
     const page = window.location.href
     // console.log(location)
     // document.location.href = `end_page.php?time=${value}`
-    window.location.replace("end_page.php")
+    window.location.replace("end_page.php?do=display")
 }
 
 

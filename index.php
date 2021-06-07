@@ -12,7 +12,7 @@
     <div class="timer" id="timer">0</div>
     <div class="container">
         <div class="code-display" id="codeDisplay">Druk op de knop om te starten</div>
-        <textarea id="codeInput" class="code-input" autofocus></textarea> 
+        <textarea hidden id="codeInput" class="code-input"></textarea> 
         <button  class="front-button-inner" onclick="startTimer();Hidecode()" >Start</button>
         <?php include'connect.php';
         $i = rand(1 , 5);
