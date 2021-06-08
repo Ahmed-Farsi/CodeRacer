@@ -46,6 +46,10 @@ h2 {
     color: #1F2833;
 }
 
+span {
+    white-space：pre-wrap;
+}
+
 .mid_links_top {
     margin:10px;
     border:1px solid;
@@ -113,8 +117,11 @@ input[type=submit]{
 .reset {
     width: 50px;
     height: 50px;
-    margin-top:50%;
+    margin-top:5%;
     margin-left: 40%;
+    display:fixed;
+
+
 }
 
 .cancel {

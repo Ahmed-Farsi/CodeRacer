@@ -69,10 +69,13 @@
                     <h1><?php echo $_COOKIE['tijd']; ?></h1>
                     <p>Seconden</p>
                 </div>
-            </div>
 
-            <div class = "mid_links_onder">
-                <h2>Code die is getypt
+                </div>
+            <?php
+            if($_GET["do"] == "hidden") {
+            ?>
+                <div class = "mid_links_onder">
+                <h3>Code die is getypt
                 <?php
                 $result = $pdo->query('SELECT * FROM code WHERE id =' . $_COOKIE['id']);
                 while ($row = $result->fetch()) {
@@ -80,8 +83,11 @@
                     echo htmlspecialchars($row['text']);
                     echo'</code></pre>';
                 }
-                ?></h2>
-            </div>
+                ?></h3>
+                </div>
+            <?php 
+            }
+            ?>
         </div>
 
         <div class = "mid_rechts">
