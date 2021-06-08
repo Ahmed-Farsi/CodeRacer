@@ -83,9 +83,17 @@ input[type=submit]{
     margin-right: 1%;
     margin-left: 1%;
     width:23%;
-    height:50%;
+    height:90%;
     background-color: #45A29E;
     text-align: center;
+}
+
+.mid_links_onder {
+    margin-bottom: 5%;
+    padding: 1%;
+    width:40%;
+    height:70%;
+    background-color: #45A29E;
 }
 
 .mid_rechts {
@@ -105,7 +113,8 @@ input[type=submit]{
 .reset {
     width: 50px;
     height: 50px;
-    margin:20px;
+    margin-top:50%;
+    margin-left: 40%;
 }
 
 .cancel {

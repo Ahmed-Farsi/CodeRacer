@@ -70,8 +70,17 @@
                     <p>Seconden</p>
                 </div>
             </div>
-            <div class="reset">
-            <a href="index.php"><img class='reset' src="icon/reset.png"></a>
+
+            <div class = "mid_links_onder">
+                <h2>Code die is getypt
+                <?php
+                $result = $pdo->query('SELECT * FROM code WHERE id =' . $_COOKIE['id']);
+                while ($row = $result->fetch()) {
+                    echo'<pre><code>';
+                    echo htmlspecialchars($row['text']);
+                    echo'</code></pre>';
+                }
+                ?></h2>
             </div>
         </div>
 
@@ -111,6 +120,9 @@
                             }
                     ?>
                 </table>
+                <div class="reset">
+                <a href="index.php"><img class='reset' src="icon/reset.png"></a>
+                </div>
         </div>
     </div>
     <br>

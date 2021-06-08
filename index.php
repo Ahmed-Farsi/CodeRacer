@@ -22,7 +22,7 @@
         $result = $pdo->query('SELECT * FROM code WHERE id =' . $i);
         while ($row = $result->fetch()) {
             ?>
-    <pre id="text" hidden><code><?php echo htmlspecialchars($row['text']); 
+        <pre id="text" hidden><code><?php echo htmlspecialchars($row['text']); 
         }?></code></pre>
     </div>   
 </body>
