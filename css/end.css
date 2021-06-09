@@ -54,12 +54,15 @@ span {
     margin:10px;
     border:1px solid;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .mid_links{
     display: flex;
     flex-direction: column;
     height: auto;
+    min-height: 400px;
     width: 200px;
     border-style: solid;
     background-color: #c5c6c7;
@@ -78,7 +81,7 @@ input[type=submit]{
 .mid_links_mid {
     display: flex;
     flex-direction: row;
-    height:45%;
+    height:auto;
     width: 100%;
     margin-top: 5%;
 }
@@ -104,6 +107,13 @@ input[type=submit]{
 
 .mid_rechts {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #c5c6c7;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    flex-grow:1;
+    /* display: flex;
     height: auto;
     width: 200px;
     margin-left: 20px;
@@ -111,26 +121,27 @@ input[type=submit]{
     flex-direction: column;
     border-style: solid;
     background-color: #c5c6c7;
-    flex-grow: 1;
+    flex-grow: 1; */
+}
+
+.mid_links_top {
+    display: flex;
+    flex-grow: 6;
 }
 
 
 .reset {
     width: 50px;
-    height: 50px;
-    margin-top:10%;
-    margin-left: 40%;
-    display:fixed;
-
-
+    height: 50px;  
+    margin-left:40%;
 }
 
 .cancel {
     width: 20px;
     height: 20px;
-    display: flex;
-    margin-left: 80%;
+    padding-left: 90%;
 }
+
 div {
     border-radius: 10px;
 }

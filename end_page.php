@@ -103,6 +103,7 @@
                         $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
                         While ($row = $result->fetch()) {
                         $num += 1;
+                        if ($num < 11) {
                         if ($row['score'] == $TPM) {
                         ?>
                             <tr class='me'>
@@ -124,11 +125,12 @@
                             
                         <?php
                             }
+                        }
                     ?>
                 </table>
                 <div class="reset">
                 <a href="index.php"><img class='reset' src="icon/reset.png"></a>
-                </div>
+                    </div>
         </div>
     </div>
     <br>
