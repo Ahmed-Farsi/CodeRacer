@@ -100,7 +100,7 @@ input[type="submit"] {
 .mid_links_onder {
   margin-bottom: 5%;
   padding: 1%;
-  width: 40%;
+  width: auto;
   height: 70%;
   background-color: #45a29e;
 }
@@ -115,7 +115,7 @@ input[type="submit"] {
   border-style: solid;
   background-color: #c5c6c7;
   margin-bottom: 20px;
-  flex-grow: 1;
+  justify-content: space-around;
 }
 
 .reset {
