@@ -32,7 +32,7 @@
                     <div class = "mid_links_top">
                     <a href='end_page.php?do=hidden'><img class='cancel' src="icon/cancel.png"></a>
                     <form action="#" Method="GET">
-                        <label for="name">your name</label><br>
+                        <label for="name">jouw naam</label><br>
                         <input type="text" id="name" name="name"><br>
                         <input type="text" id="do" name="do" value="display" hidden>
                         <input type="submit" value="verzenden">
@@ -48,8 +48,15 @@
                 </div>
 
                 <div class = "mid_links_klein">
+                    <h2><?php echo 'tijd'?></h2>
+                    <h1><?php echo $_COOKIE['tijd']; ?></h1>
+                    <p>Seconden</p>
+                </div>
+
+                <div class = "mid_links_klein">
                     <h2><?php echo 'TPM'?></h2>
                     <h1><?php echo $TPM; ?></h1>
+                    <small>aantal tekens per minuut</small>
                 </div>
 
                 <div class = "mid_links_klein">
@@ -63,16 +70,9 @@
                     }  
                 ?></h2>
                 </div>
-
-                <div class = "mid_links_klein">
-                    <h2><?php echo 'tijd'?></h2>
-                    <h1><?php echo $_COOKIE['tijd']; ?></h1>
-                    <p>Seconden</p>
-                </div>
-
                 </div>
             <?php
-            if($_GET["do"] == "hidden") {
+            if ($_GET["do"] == "hidden") {
             ?>
                 <div class = "mid_links_onder">
                 <h3>Code die is getypt
@@ -85,7 +85,7 @@
                 }
                 ?></h3>
                 </div>
-            <?php 
+                <?php 
             }
             ?>
         </div>
@@ -103,6 +103,7 @@
                         $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
                         While ($row = $result->fetch()) {
                         $num += 1;
+                        if ($num < 11) {
                         if ($row['score'] == $TPM) {
                         ?>
                             <tr class='me'>
@@ -124,6 +125,7 @@
                             
                         <?php
                             }
+                        }
                     ?>
                 </table>
                 <div class="reset">
