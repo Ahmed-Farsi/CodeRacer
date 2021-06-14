@@ -127,7 +127,7 @@
                     ?>
                 </table>
                 <div class="reset">
-                <a href="index.php"><img class='reset' src="icon/reset.png"></a>
+                <a href="game.php"><img class='reset' src="icon/reset.png"></a>
                 </div>
         </div>
     </div>
