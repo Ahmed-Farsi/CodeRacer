@@ -35,7 +35,7 @@ body {
 .button4 {
   margin: 10px;
 }
-button {
+a {
   transition-duration: 0.4s;
   background-color: black; /* Green */
   border: none;
@@ -46,7 +46,7 @@ button {
   display: inline-block;
   font-size: 16px;
 }
-button:hover {
+a:hover {
   background-color: #4caf50; /* Green */
   color: white;
 }
