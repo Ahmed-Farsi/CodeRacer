@@ -56,6 +56,7 @@ span {
 }
 
 .mid_links_top {
+<<<<<<< HEAD
   margin: 10px;
   border: 1px solid;
   padding: 10px;
@@ -116,9 +117,88 @@ input[type="submit"] {
   background-color: #c5c6c7;
   margin-bottom: 20px;
   flex-grow: 1;
+=======
+    margin:10px;
+    border:1px solid;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mid_links{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 400px;
+    width: 200px;
+    border-style: solid;
+    background-color: #c5c6c7;
+    margin-left: 20px;
+    flex-grow: 3;
+    align-items: center;
+}
+input[type=submit]{
+    background-color: #1F2833;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.mid_links_mid {
+    display: flex;
+    flex-direction: row;
+    height:auto;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.mid_links_klein {
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-bottom: 2%;
+    width:23%;
+    height:auto;
+    background-color: #45A29E;
+    text-align: center;
+}
+
+.mid_links_onder {
+    margin-bottom: 5%;
+    margin-top: 4%;
+    padding: 1%;
+    width:auto;
+    height:70%;
+    background-color: #45A29E;
+}
+
+.mid_rechts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #c5c6c7;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    flex-grow:1;
+    /* display: flex;
+    height: auto;
+    width: 200px;
+    margin-left: 20px;
+    flex-grow: 1;
+    flex-direction: column;
+    border-style: solid;
+    background-color: #c5c6c7;
+    flex-grow: 1; */
+}
+
+.mid_links_top {
+    display: flex;
+    flex-grow: 6;
+>>>>>>> cf0594590d0e110887285f8a6f7c9121658b53a7
 }
 
 .reset {
+<<<<<<< HEAD
   width: 50px;
   height: 50px;
   margin-top: 5%;
@@ -131,7 +211,19 @@ input[type="submit"] {
   height: 20px;
   display: flex;
   margin-left: 80%;
+=======
+    width: 50px;
+    height: 50px;  
+    margin-left:40%;
 }
+
+.cancel {
+    width: 20px;
+    height: 20px;
+    padding-left: 90%;
+>>>>>>> cf0594590d0e110887285f8a6f7c9121658b53a7
+}
+
 div {
   border-radius: 10px;
 }
