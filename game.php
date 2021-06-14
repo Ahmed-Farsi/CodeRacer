@@ -15,11 +15,10 @@
         <textarea hidden id="codeInput" class="code-input"></textarea> 
         <button  class="front-button-inner" onclick="startTimer();Hidecode()" >Start</button>
         <?php include'connect.php';
-        $i = rand(1 , 5);
         $cookie_name = "id";
-        $cookie_value = $i;
+        $cookie_value = $_GET['id'];
         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-        $result = $pdo->query('SELECT * FROM code WHERE id =' . $i);
+        $result = $pdo->query('SELECT * FROM code WHERE taal =' . $cookie_value);
         while ($row = $result->fetch()) {
             ?>
         <pre id="text" hidden><code><?php echo htmlspecialchars($row['text']); 
