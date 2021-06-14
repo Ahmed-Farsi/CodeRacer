@@ -118,6 +118,7 @@ input[type="submit"] {
   margin-left: 2rem;
   margin-right: 2rem;
   flex-grow: 1;
+<<<<<<< HEAD
   /* display: flex;
     height: auto;
     width: 200px;
@@ -132,6 +133,8 @@ input[type="submit"] {
 .mid_links_top {
   display: flex;
   flex-grow: 6;
+=======
+>>>>>>> 9d4b709ca696824b2d0c83335b2a680e75e26909
 }
 
 .reset {
@@ -143,7 +146,12 @@ input[type="submit"] {
 .cancel {
   width: 20px;
   height: 20px;
+<<<<<<< HEAD
   padding-left: 90%;
+=======
+  display: flex;
+  margin-left: 80%;
+>>>>>>> 9d4b709ca696824b2d0c83335b2a680e75e26909
 }
 
 div {

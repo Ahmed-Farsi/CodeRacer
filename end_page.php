@@ -62,18 +62,18 @@
                 <div class = "mid_links_klein">
                 <h2><?php
                     $result = $pdo->query('SELECT MAX(score) FROM leaderBoard');
-                    While ($row = $result->fetch()) {
+                while ($row = $result->fetch()) {
                     ?>
                         <h2><?php echo 'High Score'; ?></h2>
                         <h1><?php echo $row['MAX(score)']; ?></h1>
                     <?php
-                    }  
+                }  
                 ?></h2>
                 </div>
                 </div>
             <?php
             if ($_GET["do"] == "hidden") {
-            ?>
+                ?>
                 <div class = "mid_links_onder">
                 <h3>Code die is getypt
                 <?php
@@ -101,32 +101,33 @@
                     <?php
                         $num = 0;
                         $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
-                        While ($row = $result->fetch()) {
+                    while ($row = $result->fetch()) {
                         $num += 1;
                         if ($num < 11) {
-                        if ($row['score'] == $TPM) {
-                        ?>
+                            if ($row['score'] == $TPM) {
+                                ?>
                             <tr class='me'>
                                 <td><?php echo $num ?></td>
                                 <td><?php echo $row['score'] ?></td>
                                 <td><?php echo $row['naam'] ?></td>
                             </tr>
-                        <?php
-                        } else {
-                        ?>
+                                <?php
+                            } else {
+                                ?>
                             <tr>
                                 <td><?php echo $num ?></td>
                                 <td><?php echo $row['score'] ?></td>
                                 <td><?php echo $row['naam'] ?></td>
                             </tr>
-                        <?php
-                        }
-                        ?>
-                            
-                        <?php
+                                <?php
                             }
+                            ?>
+                            
+                            <?php
                         }
-                    ?>
+                    }
+                    ?><div class="
+                    "></div>
                 </table>
                 <div class="reset">
                 <a href="game.php"><img class='reset' src="icon/reset.png"></a>
