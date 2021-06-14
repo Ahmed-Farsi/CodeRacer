@@ -18,7 +18,7 @@
         $cookie_name = "id";
         $cookie_value = $_GET['id'];
         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-        $result = $pdo->query('SELECT * FROM code WHERE taal =' . $cookie_value);
+        $result = $pdo->query('SELECT * FROM code WHERE taal =' . $cookie_value . 'ORDER BY RAND() LIMIT 1;');
         while ($row = $result->fetch()) {
             ?>
         <pre id="text" hidden><code><?php echo htmlspecialchars($row['text']); 
