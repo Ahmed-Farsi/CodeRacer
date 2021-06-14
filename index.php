@@ -22,11 +22,10 @@
             </div>
             <div class="box2">
                 <h3>Choose your programing language</h3>
-                <button class="button1" type="button">Javascript</button>
-                <button class="button2" type="button">HTML</button>
-                <button class="button3" type="button">PHP</button>
-                <button class="button4" type="button">C</button>
                 <a href="game.php?id='JS'">Javascript</a>
+                <a href="game.php?id='PHP'">PHP</a>
+                <a href="game.php?id='HTML'">HTML</a>
+                <a href="game.php?id='C'">C</a>
             </div>
         </div>
     </div>
