@@ -137,3 +137,8 @@ input[type="submit"] {
 div {
   border-radius: 10px;
 }
+
+.select {
+  display: flex;
+  justify-content: center;
+}

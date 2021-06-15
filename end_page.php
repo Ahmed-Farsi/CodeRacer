@@ -93,14 +93,14 @@
 
         <div class = "mid_rechts">
                 <h1 class = "title_lb">Leader Board</h1>
-                <form method = "POST" action="#">
+                <form method = "POST" action="#" class = "select">
                     <label for="sort">Sort</label>
                     <select id="sort" name="sort">
                     <option value="score">Score</option>
                     <option value="taal">Taal</option>
                     </select>
                     <input type="submit" value="verzenden">
-                <form>
+             </form>
                 <table class = 'leaderboard'>
                     <tr>
                         <th>Rank</th>
