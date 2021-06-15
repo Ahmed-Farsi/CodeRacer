@@ -64,8 +64,6 @@ span {
 .mid_links {
   display: flex;
   flex-direction: column;
-  height: 500px;
-  width: 200px;
   border-style: solid;
   background-color: #c5c6c7;
   margin-left: 20px;
@@ -108,14 +106,11 @@ input[type="submit"] {
 
 .mid_rechts {
   display: flex;
-  height: 500px;
-  width: 200px;
   margin-left: 20px;
   flex-grow: 1;
   flex-direction: column;
   border-style: solid;
   background-color: #c5c6c7;
-  margin-bottom: 20px;
   justify-content: space-around;
 }
 
