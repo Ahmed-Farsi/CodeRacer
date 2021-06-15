@@ -47,9 +47,8 @@ int main() {
 Create table `leaderBoard`(
     id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     score int (100) NOT NULL,
-    naam varchar (50) NOT NULL
+    naam varchar (50) NOT NULL,
+    taal varchar (50) NOT NULL
 );
  
-Insert into `leaderBoard`(score, naam)
-values (100, 'testuser');
 
