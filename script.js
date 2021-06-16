@@ -70,7 +70,7 @@ function startTimer() {
     setInterval(() => {
         const tijd = getTimerTime()
         const seconds = Math.floor(tijd / 100)
-        const milliseconds = tijd % 100
+        let milliseconds = tijd % 100
         if (milliseconds <= 9) {
             milliseconds = `${milliseconds}`
         }
@@ -85,7 +85,7 @@ function getTimerTime() {
 
 function newPage() {
     let value = timer.innerHTML;
-    document.cookie = `tijd=${value}`
+    document.cookie = `tijd=${encrypt(value)}`
     console.log(`tijd=${value}`)
     const page = window.location.href
     // console.log(location)
@@ -165,4 +165,18 @@ textarea.onkeydown = function(event) {
     } 
 }
 
+function encrypt(message = ''){
+    let key = CryptoJS.enc.Hex.parse("0123456789abcdef0123456789abcdef");
+    let iv =  CryptoJS.enc.Hex.parse("abcdef9876543210abcdef9876543210");
+    var message = CryptoJS.AES.encrypt(message, key, {iv:iv, padding:CryptoJS.pad.ZeroPadding});
+    return message.toString();
+}
+function decrypt(message = '', key = ''){
+    var code = CryptoJS.AES.decrypt(message, key);
+    var decryptedMessage = code.toString(CryptoJS.enc.Utf8);
+
+    return decryptedMessage;
+}
+console.log(encrypt('Hello World'));
+console.log(decrypt('U2FsdGVkX1/VN89PD4nGUMmVkvZh128CGFPWTuQCG0k=', 'abc'))
 

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/end.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" defer></script>
     <title>Results</title>
 </head>
 <body>
@@ -49,7 +50,7 @@
 
                 <div class = "mid_links_klein">
                     <h2><?php echo 'tijd'?></h2>
-                    <h1><?php echo $_COOKIE['tijd']; ?></h1>
+                    <h1><?php echo $decrypted_msg; ?></h1>
                     <p>Seconden</p>
                 </div>
 
