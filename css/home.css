@@ -47,3 +47,7 @@ a:hover {
   background-color: #4caf50; /* Green */
   color: white;
 }
+.title,
+.subTitle {
+  color: #66fcf1;
+}

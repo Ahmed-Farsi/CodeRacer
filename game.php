@@ -23,6 +23,7 @@
         $result = $pdo->query('SELECT * FROM code WHERE taal =' . $_GET['id'] . 'ORDER BY RAND() LIMIT 1;');
         while ($row = $result->fetch()) {
             setcookie('id', $row['id'], time() + (86400 * 30), "/");
+            setcookie('taal', $row['taal'], time() + (86400 * 30), "/");
             ?>
         <pre id="text" hidden><code><?php echo htmlspecialchars($row['text']); 
         }?></code></pre>

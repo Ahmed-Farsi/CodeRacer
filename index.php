@@ -17,11 +17,21 @@
     <div class="lowerContainer">
         <div class="boxes">
             <div class="box1">
-                <h3>How does is work</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vero ab. Assumenda quis odit soluta exercitationem eveniet suscipit aliquid, itaque molestias consectetur atque id eligendi! Illum ipsum similique temporibus deleniti.</p>
+                <h3>Uitleg</h3>
+                <p>De game is een race tegen de tijd om zo snel mogelijk de code te schrijven.
+                <br>
+                   1. Kies de programming taal die u wilt proberen.
+                   <br>
+                   2. Druk op de startknop om te beginnen.
+                   <br>
+                   3. Probeer zo snel mogelijk de code te schrijven.
+                   <br>
+                   4. Je krijgt je score te zien.
+                   <br>
+                   5. Vul je naam in om je score op te slaan.</p>
             </div>
             <div class="box2">
-                <h3>Choose your programing language</h3>
+                <h3> Kies jouw programing language</h3>
                 <a href="game.php?id='JS'">Javascript</a>
                 <a href="game.php?id='PHP'">PHP</a>
                 <a href="game.php?id='HTML'">HTML</a>

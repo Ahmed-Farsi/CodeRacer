@@ -14,10 +14,11 @@
     include 'berekening.php';
 
     if (!empty($_GET["name"])) {
-        $sql = "INSERT INTO leaderBoard (score, naam) VALUES(:score, :naam)";
+        $sql = "INSERT INTO leaderBoard (score, naam, taal) VALUES(:score, :naam, :taal)";
         $pdo->prepare($sql)->execute([
             ':score' => $TPM,
-            ':naam' => $_GET["name"]
+            ':naam' => $_GET["name"],
+            ':taal' => $_COOKIE["taal"]
         ]);
         header('Location: end_page.php?do=hidden');
     }
@@ -93,15 +94,32 @@
 
         <div class = "mid_rechts">
                 <h1 class = "title_lb">Leader Board</h1>
+                <form method = "POST" action="#" class = "select">
+                    <label for="sort">Sort</label>
+                    <select id="sort" name="sort">
+                    <option value="score">Score</option>
+                    <option value="taal">Taal</option>
+                    </select>
+                    <input type="submit" value="verzenden">
+             </form>
                 <table class = 'leaderboard'>
                     <tr>
                         <th>Rank</th>
                         <th>Score(TPM)</th>
                         <th>name</th>
+                        <th>taal</th>
                     </tr>
                     <?php
                         $num = 0;
-                        $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
+                        if (!isset($_POST['sort'])) {
+                            $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
+                        } else {
+                            if ($_POST['sort'] == 'taal') {
+                                $result = $pdo->query('SELECT * FROM leaderBoard WHERE taal=\'' . $_COOKIE['taal'] . '\' ORDER BY score DESC');
+                            } else {
+                                $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
+                            }
+                        }
                     while ($row = $result->fetch()) {
                         $num += 1;
                         if ($num < 11) {
@@ -111,6 +129,7 @@
                                 <td><?php echo $num ?></td>
                                 <td><?php echo $row['score'] ?></td>
                                 <td><?php echo $row['naam'] ?></td>
+                                <td><?php echo $row['taal'] ?></td>
                             </tr>
                                 <?php
                             } else {
@@ -119,6 +138,7 @@
                                 <td><?php echo $num ?></td>
                                 <td><?php echo $row['score'] ?></td>
                                 <td><?php echo $row['naam'] ?></td>
+                                <td><?php echo $row['taal'] ?></td>
                             </tr>
                                 <?php
                             }
