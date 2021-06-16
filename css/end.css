@@ -60,9 +60,6 @@ th {
   background-color: yellow;
 }
 
-h2 {
-  color: #1f2833;
-}
 
 span {
   white-space: pre;
@@ -84,8 +81,7 @@ span {
   flex-grow: 3;
   align-items: center;
 }
-input[type="submit"] {
-  background-color: #1f2833;
+.knop_twee {
   color: white;
   text-align: center;
   text-decoration: none;
@@ -98,12 +94,13 @@ input[type="submit"] {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
-
+  margin: 10px 5px;
+  margin-bottom:15px;
+  border-radius: 15px;
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+.knop_twee:hover {
   background-color: #009b27;
   color: white;
 } 
@@ -122,21 +119,25 @@ input[type="submit"]:hover {
   margin-left: 1%;
   width: 23%;
   height: 90%;
-  background-color: rgba(247,89,64,1);
+  border:1px solid #9bdf70;
+  background:#f0fbeb;
   text-align: center;
   padding:5px;
+  color: black;
 }
 
 .mid_links_klein:hover {
-  background-color: rgb(253, 34, 0);
+  background-color: #00f008;
+  color:white;
 }
 
 .mid_links_onder {
-  margin-bottom: 5%;
+  margin: 5%;
   padding: 1%;
   width: auto;
   height: 70%;
-  background-color: rgba(247,89,64,1);
+  background-color:#03be09;
+  color: white;
 }
 
 .mid_rechts {
@@ -158,11 +159,14 @@ input[type="submit"]:hover {
 }
 
 .cancel {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   display: flex;
-  margin-left: 80%;
+  position: relative;
+  left: 90%;
+  bottom:5%;
 }
+
 
 div {
   border-radius: 5px;
@@ -171,35 +175,41 @@ div {
 .select {
   display: flex;
   flex-direction:row;
-  justify-content: space-around;
+  justify-content: center;
 }
-  pre {
-    background-color: #D1D1D0;
-    overflow: auto;
-    font-family: 'Monaco', monospace;
-    padding: 0 1em;
-  }
 
-
-
-code {
-    font-family: Monaco, monospace;
-    font-size: $base-font-size;
-    line-height: 100%;
-    background-color: #eee;
-    padding: 0.2em;
-    letter-spacing: -0.05em;
-    word-break: normal;
-    /border-radius: 5px;/
-  }
-
+pre {
+  width:auto;  
+  margin: 10px 0 0 0;  
+  padding: 10px;  
+  border: 0;  
+  border: 1px dotted #785;  
+  background: #070068;  
+  font-family: "Courier New",monospace;  
+  font-size: 20px;  
+}
 
 
 pre code {
-    border: none;
-    background: none;
-    font-size: $base-font-size * 0.875;
-    line-height: 1em;
-    letter-spacing: normal;
-    word-break: break-all;
-  }
+font-family: "Courier New",monospace;  
+color:#fffb00;  
+}
+
+
+input{
+  outline-style: none ;
+  border: 1px solid #ccc; 
+  border-radius: 3px;
+  padding: 13px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Microsoft soft";
+}
+
+input:focus{
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
