@@ -66,12 +66,6 @@ span {
 .mid_links {
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
-  height: auto;
-  min-height: 400px;
-  width: 200px;
-=======
->>>>>>> f0dcd0bb1c37cb2e512d834024912139734a724f
   border-style: solid;
   background-color: #c5c6c7;
   margin-left: 20px;
