@@ -17,7 +17,7 @@
     <div class="timer" id="timer">0</div>
     <div class="container">
         <div class="code-display" id="codeDisplay">Druk op de knop om te starten</div>
-        <textarea hidden id="codeInput" class="code-input"></textarea> 
+        <textarea onpaste="return false" hidden id="codeInput" class="code-input"></textarea> 
         <button  class="front-button-inner" onclick="startTimer();Hidecode()" >Start</button>
         <?php include'connect.php';
         $result = $pdo->query('SELECT * FROM code WHERE taal =' . $_GET['id'] . 'ORDER BY RAND() LIMIT 1;');
