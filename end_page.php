@@ -110,15 +110,15 @@
                     </tr>
                     <?php
                         $num = 0;
-                        if (!isset($_POST['sort'])) {
+                    if (!isset($_POST['sort'])) {
                             $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
-                        } else {
-                            if ($_POST['sort'] == 'taal') {
+                    } else {
+                        if ($_POST['sort'] == 'taal') {
                                 $result = $pdo->query('SELECT * FROM leaderBoard WHERE taal=\'' . $_COOKIE['taal'] . '\' ORDER BY score DESC');
-                            } else {
+                        } else {
                                 $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
-                            }
                         }
+                    }
                     while ($row = $result->fetch()) {
                         $num += 1;
                         if ($num < 11) {
