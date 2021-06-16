@@ -93,14 +93,16 @@
 
         <div class = "mid_rechts">
                 <h1 class = "title_lb">Leader Board</h1>
+                <div class = "select">
                 <form method = "POST" action="#" class = "select">
-                    <label for="sort">Sort</label>
-                    <select id="sort" name="sort">
-                    <option value="score">Score</option>
-                    <option value="taal">Taal</option>
-                    </select>
-                    <input type="submit" value="verzenden">
-             </form>
+                    <input type ='text' value = "Score" name = "sort" hidden>
+                    <input type = 'submit' value = "Score">
+                </form>
+                <form method = "POST" action="#" class = "select">
+                    <input type ='text' value = "taal" name = "sort" hidden>
+                    <input type ='submit' value = "Taal">
+                </form>
+                </div>
                 <table class = 'leaderboard'>
                     <tr>
                         <th>Rank</th>
@@ -125,7 +127,7 @@
                             if ($row['score'] == $TPM) {
                                 ?>
                             <tr class='me'>
-                                <td><?php echo $num ?></td>
+                                <td class='rank'><?php echo $num ?></td>
                                 <td><?php echo $row['score'] ?></td>
                                 <td><?php echo $row['naam'] ?></td>
                                 <td><?php echo $row['taal'] ?></td>
@@ -134,7 +136,7 @@
                             } else {
                                 ?>
                             <tr>
-                                <td><?php echo $num ?></td>
+                                <td class='rank'><?php echo $num ?></td>
                                 <td><?php echo $row['score'] ?></td>
                                 <td><?php echo $row['naam'] ?></td>
                                 <td><?php echo $row['taal'] ?></td>

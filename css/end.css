@@ -35,12 +35,25 @@ body {
 .leaderboard {
   display: flex;
   justify-content: center;
+  border-collapse: collapse;  
 }
 
 th,
 td {
   border: 1px solid;
   color: #1f2833;
+  text-align: center;
+}
+
+th {
+  background-color:#407fcc;
+  color:white;
+  font-size: large;
+  padding: 10px;
+}
+
+.rank {
+  background-color: #66fcf1;
 }
 
 .me {
@@ -59,15 +72,14 @@ span {
   margin: 10px;
   border: 1px solid;
   padding: 10px;
+  background-color: #66fcf1;
 }
 
 .mid_links {
   display: flex;
   flex-direction: column;
-  height: 500px;
-  width: 200px;
   border-style: solid;
-  background-color: #c5c6c7;
+  background-color: #5bd1d7;
   margin-left: 20px;
   flex-grow: 3;
   align-items: center;
@@ -78,7 +90,23 @@ input[type="submit"] {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  background-color: #03be09; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+
+  cursor: pointer;
 }
+
+input[type="submit"]:hover {
+  background-color: #009b27;
+  color: white;
+} 
 
 .mid_links_mid {
   display: flex;
@@ -89,13 +117,18 @@ input[type="submit"] {
 }
 
 .mid_links_klein {
+  transition-duration: 0.7s;
   margin-right: 1%;
   margin-left: 1%;
   width: 23%;
   height: 90%;
-  background-color: #45a29e;
+  background-color: rgba(247,89,64,1);
   text-align: center;
   padding:5px;
+}
+
+.mid_links_klein:hover {
+  background-color: rgb(253, 34, 0);
 }
 
 .mid_links_onder {
@@ -103,19 +136,16 @@ input[type="submit"] {
   padding: 1%;
   width: auto;
   height: 70%;
-  background-color: #45a29e;
+  background-color: rgba(247,89,64,1);
 }
 
 .mid_rechts {
   display: flex;
-  height: 500px;
-  width: 200px;
   margin-left: 20px;
   flex-grow: 1;
   flex-direction: column;
   border-style: solid;
-  background-color: #c5c6c7;
-  margin-bottom: 20px;
+  background-color: #5bd1d7;
   justify-content: space-around;
 }
 
@@ -135,10 +165,41 @@ input[type="submit"] {
 }
 
 div {
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .select {
   display: flex;
-  justify-content: center;
+  flex-direction:row;
+  justify-content: space-around;
 }
+  pre {
+    background-color: #D1D1D0;
+    overflow: auto;
+    font-family: 'Monaco', monospace;
+    padding: 0 1em;
+  }
+
+
+
+code {
+    font-family: Monaco, monospace;
+    font-size: $base-font-size;
+    line-height: 100%;
+    background-color: #eee;
+    padding: 0.2em;
+    letter-spacing: -0.05em;
+    word-break: normal;
+    /border-radius: 5px;/
+  }
+
+
+
+pre code {
+    border: none;
+    background: none;
+    font-size: $base-font-size * 0.875;
+    line-height: 1em;
+    letter-spacing: normal;
+    word-break: break-all;
+  }
