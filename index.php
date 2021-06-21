@@ -32,10 +32,11 @@
             </div>
             <div class="box2">
                 <h3> Kies jouw programing language</h3>
-                <a href="game.php?id='JS'">Javascript</a>
-                <a href="game.php?id='PHP'">PHP</a>
-                <a href="game.php?id='HTML'">HTML</a>
-                <a href="game.php?id='C'">C</a>
+                <a href="game.php?id=JS">Javascript</a>
+                <a href="game.php?id=PHP">PHP</a>
+                <a href="game.php?id=HTML">HTML</a>
+                <a href="game.php?id=C">C</a>
+                <a href="game.php?id=random">Random</a>
             </div>
         </div>
     </div>
