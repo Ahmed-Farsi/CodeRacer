@@ -84,6 +84,7 @@ span {
   margin-left: 20px;
   flex-grow: 3;
   align-items: center;
+  min-height: 30em;
 }
 .knop_twee {
   color: white;
