@@ -52,6 +52,10 @@ th {
   padding: 10px;
 }
 
+.td {
+  background-color:#66fcf1;
+}
+
 .rank {
   background-color: #66fcf1;
 }
@@ -80,6 +84,7 @@ span {
   margin-left: 20px;
   flex-grow: 3;
   align-items: center;
+  min-height: 30em;
 }
 .knop_twee {
   color: white;
@@ -155,7 +160,8 @@ span {
   height: 50px;
   margin-top: 5%;
   margin-left: 40%;
-  display: fixed;
+  display: flex;
+  flex-direction: column;;
 }
 
 .cancel {

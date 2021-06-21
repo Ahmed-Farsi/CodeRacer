@@ -20,6 +20,7 @@
             ':naam' => $_GET["name"],
             ':taal' => $_COOKIE["taal"]
         ]);
+        setcookie('name', $_GET["name"], time() + (86400 * 30), "/");
         header('Location: end_page.php?do=hidden');
     }
     
@@ -32,12 +33,12 @@
             if ($_GET["do"] !== "hidden") {
                 echo <<<EOF
                     <div class = "mid_links_top">
-                    <a class='cancel' href='end_page.php?do=hidden'><img src="icon/cancel.png"></a>
-                    <form action="#" Method="GET">
-                        <input type="text" id="name" name="name" placeholder="Jouw naam">
-                        <input type="text" id="do" name="do" value="display" hidden>
-                        <input type="submit" value="verzenden">
-                    </form>
+                        <a class='cancel' href='end_page.php?do=hidden'><img src="icon/cancel.png"></a>
+                        <form action="#" Method="GET">
+                            <input type="text" id="name" name="name" placeholder="Jouw naam">
+                            <input type="text" id="do" name="do" value="display" hidden>
+                            <input type="submit" value="verzenden">
+                        </form>
                     </div>
                 EOF;
             } 
@@ -94,15 +95,26 @@
         <div class = "mid_rechts">
                 <h1 class = "title_lb">Leader Board</h1>
                 <div class = "select">
-                <form method = "POST" action="#" class = "select">
-                    <input type ='text' value = "Score" name = "sort" hidden>
-                    <input type = 'submit' value = "Score" class = "knop_twee">
-                </form>
-                <form method = "POST" action="#" class = "select">
-                    <input type ='text' value = "taal" name = "sort" hidden>
-                    <input type ='submit' value = "Taal" class = "knop_twee">
-                </form>
+                    <form method = "POST" action="#" class = "select">
+                        <input type ='text' value = "Score" name = "sort" hidden>
+                        <input type = 'submit' value = "Score" class = "knop_twee">
+                    </form>
+                    <form method = "POST" action="#" class = "select">
+                        <input type ='text' value = "taal" name = "sort" hidden>
+                        <input type ='submit' value = "Taal" class = "knop_twee">
+                    </form>
+                    <?php
+                        if (isset($_COOKIE["name"])) {
+                            echo <<<EOF
+                                <form method = "POST" action="#" class = "select">
+                                <input type ='text' value = "Naam" name = "sort" hidden>
+                                <input type ='submit' value = "Naam" class = "knop_twee">
+                                </form>
+                            EOF;
+                        }
+                    ?>
                 </div>
+    
                 <table class = 'leaderboard'>
                     <tr>
                         <th>Rank</th>
@@ -117,7 +129,11 @@
                     } else {
                         if ($_POST['sort'] == 'taal') {
                                 $result = $pdo->query('SELECT * FROM leaderBoard WHERE taal=\'' . $_COOKIE['taal'] . '\' ORDER BY score DESC');
-                        } else {
+                            } 
+                            if ($_POST['sort'] == 'Naam') {
+                                $result = $pdo->query('SELECT * FROM leaderBoard WHERE naam=\'' . $_COOKIE['name'] . '\' ORDER BY score DESC');
+                            }
+                            if  ($_POST['sort'] == 'Score') {
                                 $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
                         }
                     }
@@ -127,7 +143,7 @@
                             if ($row['score'] == $TPM) {
                                 ?>
                             <tr class='me'>
-                                <td class='rank'><?php echo $num ?></td>
+                                <td class='td'><?php echo $num ?></td>
                                 <td><?php echo $row['score'] ?></td>
                                 <td><?php echo $row['naam'] ?></td>
                                 <td><?php echo $row['taal'] ?></td>
@@ -136,7 +152,7 @@
                             } else {
                                 ?>
                             <tr>
-                                <td class='rank'><?php echo $num ?></td>
+                                <td class='td'><?php echo $num ?></td>
                                 <td><?php echo $row['score'] ?></td>
                                 <td><?php echo $row['naam'] ?></td>
                                 <td><?php echo $row['taal'] ?></td>

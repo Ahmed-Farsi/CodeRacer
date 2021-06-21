@@ -20,7 +20,9 @@
         <textarea onpaste="return false" hidden id="codeInput" class="code-input"></textarea> 
         <button  class="front-button-inner" onclick="startTimer();Hidecode()" >Start</button>
         <?php 
-        include 'connect.php';
+        include'connect.php';
+        setcookie('name',"",time()-60, "/");
+        $result = $pdo->query('SELECT * FROM code WHERE taal =' . $_GET['id'] . 'ORDER BY RAND() LIMIT 1;');
         if ($_GET['id'] == 'random') {
             $i = rand(1, 5);
             $result = $pdo->query('SELECT * FROM code WHERE id =' . $i);
