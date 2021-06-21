@@ -94,3 +94,20 @@ span {
   -ms-user-select: none;
   user-select: none;
 }
+
+.tooltip {
+  position: fixed;
+  top: 40px;left:40px;
+}
+
+.tooltip .tooltip-content {
+  visibility: hidden;
+}
+
+.tooltip:hover .tooltip-content {
+  visibility: visible;
+  background-color:black;
+  color: white;
+  transition-duration: 0.7s;
+}
+

@@ -14,6 +14,24 @@
     <title>Type game</title>
 </head>
 <body>
+    <div class="tooltip">
+		<div class="icon" style="font-size: 20px;">💡</div>
+		<div class="tooltip-content">
+        <h3>Uitleg</h3>
+                <p>De game is een race tegen de tijd om zo snel mogelijk de code te schrijven.
+                <br>
+                   1. Kies de programming taal die u wilt proberen.
+                   <br>
+                   2. Druk op de startknop om te beginnen.
+                   <br>
+                   3. Probeer zo snel mogelijk de code te schrijven.
+                   <br>
+                   4. Je krijgt je score te zien.
+                   <br>
+                   5. Vul je naam in om je score op te slaan.</p>
+		</div>
+	</div>
+
     <div class="timer" id="timer">0</div>
     <div class="container">
         <div class="code-display" id="codeDisplay">Druk op de knop om te starten</div>
