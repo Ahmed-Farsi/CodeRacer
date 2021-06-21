@@ -41,7 +41,6 @@
             <div class="box3">
             <?php 
                 include 'connect.php';
-                include 'berekening.php';
             ?>
                 <style> 
                     td {
