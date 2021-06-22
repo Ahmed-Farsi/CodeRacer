@@ -39,7 +39,7 @@
         <button  class="front-button-inner" onclick="startTimer();Hidecode()" >Start</button>
         <?php 
         include'connect.php';
-        setcookie('name',"",time()-60, "/");
+        setcookie('name' , "" , time() - 60, "/");
         $result = $pdo->query('SELECT * FROM code WHERE taal =' . $_GET['id'] . 'ORDER BY RAND() LIMIT 1;');
         if ($_GET['id'] == 'random') {
             $i = rand(1, 5);
