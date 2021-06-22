@@ -33,7 +33,7 @@ body {
 a {
   margin: 10px;
 }
-a {
+.knop_twee {
   transition-duration: 0.4s;
   background-color: black; /* Green */
   border: none;
@@ -44,11 +44,16 @@ a {
   display: inline-block;
   font-size: 16px;
 }
-a:hover {
+.knop_twee:hover {
   background-color: #4caf50; /* Green */
   color: white;
 }
 .title,
 .subTitle {
   color: #66fcf1;
+}
+
+img {
+  width:50px;
+  height: 50px;
 }

@@ -8,6 +8,9 @@
     <title>Home</title>
 </head>
 <body>
+    <div class="admin">
+    <a href="admin.php"`class='admin_knop'><img src="icon/usericon.png"></a>
+    </div>
     <div class="upperContainer">
         <div class="header">
             <h1 class="title">Programing Type Racer</h1>
@@ -32,11 +35,11 @@
             </div>
             <div class="box2">
                 <h3> Kies jouw programing language</h3>
-                <a href="game.php?id=JS">Javascript</a>
-                <a href="game.php?id=PHP">PHP</a>
-                <a href="game.php?id=HTML">HTML</a>
-                <a href="game.php?id=C">C</a>
-                <a href="game.php?id=random">Random</a>
+                <a href="game.php?id=JS" class='knop_twee'>Javascript</a>
+                <a href="game.php?id=PHP" class='knop_twee'>PHP</a>
+                <a href="game.php?id=HTML" class='knop_twee'>HTML</a>
+                <a href="game.php?id=C" class='knop_twee'>C</a>
+                <a href="game.php?id=random" class='knop_twee'>Random</a>
             </div>
             <div class="box3">
             <?php 
