@@ -50,5 +50,13 @@ Create table `leaderBoard`(
     naam varchar (50) NOT NULL,
     taal varchar (50) NOT NULL
 );
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+insert into `users` (`username`, `password`) values ('Admin', 'admin')
  
 
