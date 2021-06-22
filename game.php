@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="tooltip">
-		<div class="icon" style="font-size: 20px;">💡</div>
+		<div class="icon" style="font-size: 20px; color: #45a29e">Hover voor uitleg</div>
 		<div class="tooltip-content">
         <h3>Uitleg</h3>
                 <p>De game is een race tegen de tijd om zo snel mogelijk de code te schrijven.
