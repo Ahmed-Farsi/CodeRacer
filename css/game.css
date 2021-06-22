@@ -20,7 +20,7 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #c5c6c7;
+  background-color: #5bd1d7;
   padding: 1rem;
   border-radius: 0.5rem;
   width: 700px;
@@ -74,7 +74,11 @@ body,
   text-align: center;
   font-size: 20px;
   font-weight: 700;
+<<<<<<< HEAD
+  background: #4caf50;
+=======
   background: #07706b;
+>>>>>>> c993a8eeef645a9e2d84a69998b1c7054b927975
   border-radius: 10px;
   border: solid 3px #07706b;
   border-width: 1px 1px 4px;
@@ -82,6 +86,8 @@ body,
   cursor: pointer;
   color: #fff;
 }
+
+
 span {
   white-space: pre;
 }
@@ -94,3 +100,20 @@ span {
   -ms-user-select: none;
   user-select: none;
 }
+
+.tooltip {
+  position: fixed;
+  top: 40px;left:40px;
+}
+
+.tooltip .tooltip-content {
+  visibility: hidden;
+}
+
+.tooltip:hover .tooltip-content {
+  visibility: visible;
+  background-color:black;
+  color: white;
+  transition-duration: 0.7s;
+}
+

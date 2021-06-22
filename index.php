@@ -41,7 +41,6 @@
             <div class="box3">
             <?php 
                 include 'connect.php';
-                include 'berekening.php';
             ?>
                 <style> 
                     td {
@@ -55,7 +54,12 @@
                     text-align: center;
                     font-size: large;
                     padding: 10px;
+                    background-color:yellow;
                     }
+                    .rank {
+                        background-color: #66fcf1;
+                    }
+                   
                 </style>
                 <h1 class = "title_lb">Leader Board</h1>
                 <table class = 'leaderboard' style="display: flex; justify-content: center; border-collapse: collapse; ">
@@ -66,30 +70,12 @@
                     <th>taal</th>
                 </tr>
                 <?php
-                    $num = 0;
-                    if (!isset($_POST['sort'])) {
-                        $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
-                    } else {
-                    if ($_POST['sort'] == 'taal') {
-                        $result = $pdo->query('SELECT * FROM leaderBoard WHERE taal=\'' . $_COOKIE['taal'] . '\' ORDER BY score DESC');
-                    } else {
-                        $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
-                    }
-                }
+                $num = 0;
+                $result = $pdo->query('SELECT * FROM leaderBoard ORDER BY score DESC');
                 while ($row = $result->fetch()) {
                     $num += 1;
                     if ($num < 11) {
-                        if ($row['score'] == $TPM) {
                             ?>
-                        <tr class='me'>
-                            <td class='rank'><?php echo $num ?></td>
-                            <td><?php echo $row['score'] ?></td>
-                            <td><?php echo $row['naam'] ?></td>
-                            <td><?php echo $row['taal'] ?></td>                            
-                        </tr>
-                            <?php
-                            } else {
-                                ?>
                         <tr>
                             <td class='rank'><?php echo $num ?></td>
                             <td><?php echo $row['score'] ?></td>
@@ -102,7 +88,6 @@
                             
                             <?php
                         }
-                    }
                 ?><div class=""></div>
                 </table>
             </div>
