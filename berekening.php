@@ -5,7 +5,7 @@ while ($row = $result->fetch()) {
     $array = $row['text'];
 }
 $delete = array(" ","　","\t","\n","\r");
-$tekens = str_replace($delete ,'',$array);
+$tekens = str_replace($delete, '', $array);
 $aantal_tekens = strlen($tekens);
 
 $cyphers = openssl_get_cipher_methods();
