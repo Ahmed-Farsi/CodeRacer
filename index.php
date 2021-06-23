@@ -78,7 +78,7 @@
                 while ($row = $result->fetch()) {
                     $num += 1;
                     if ($num < 11) {
-                            ?>
+                        ?>
                         <tr>
                             <td class='rank'><?php echo $num ?></td>
                             <td><?php echo $row['score'] ?></td>
@@ -86,11 +86,11 @@
                             <td><?php echo $row['taal'] ?></td>
                         </tr>
                         <?php
-                        }
-                        ?>
+                    }
+                    ?>
                             
                             <?php
-                        }
+                }
                 ?><div class=""></div>
                 </table>
             </div>
