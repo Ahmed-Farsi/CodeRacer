@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="admin">
-    <a href="admin.php"`class='admin_knop'><img src="icon/usericon.png"></a>
+    <a href="login.php"`class='admin_knop'><img src="icon/usericon.png"></a>
     </div>
     <div class="upperContainer">
         <div class="header">

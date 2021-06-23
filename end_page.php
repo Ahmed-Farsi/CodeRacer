@@ -94,6 +94,7 @@
 
         <div class = "mid_rechts">
                 <h1 class = "title_lb">Leader Board</h1>
+                <p class = "title_lb">filter op:</p>
                 <div class = "select">
                     <form method = "POST" action="#" class = "select">
                         <input type ='text' value = "Score" name = "sort" hidden>
@@ -101,16 +102,17 @@
                     </form>
                     <form method = "POST" action="#" class = "select">
                         <input type ='text' value = "taal" name = "sort" hidden>
-                        <input type ='submit' value = "Taal" class = "knop_twee">
+                        <input type ='submit' value = "<?php echo $_COOKIE["taal"]?>" class = "knop_twee">
                     </form>
                     <?php
                         if (isset($_COOKIE["name"])) {
                             echo <<<EOF
                                 <form method = "POST" action="#" class = "select">
                                 <input type ='text' value = "Naam" name = "sort" hidden>
-                                <input type ='submit' value = "Naam" class = "knop_twee">
-                                </form>
                             EOF;
+                            echo "<input type ='submit' value = " . $_COOKIE["name"] .  " class = 'knop_twee'>";
+                            echo "</form>";
+                            
                         }
                     ?>
                 </div>

@@ -104,6 +104,7 @@ span {
 
 .tooltip .tooltip-content {
   visibility: hidden;
+  padding: 10px;
 }
 
 .tooltip:hover .tooltip-content {

@@ -10,7 +10,7 @@ include "connect.php";
         <form method="post">
             <label for="username">Wat is het id van de score die je wilt verwijderen <br/></label>
             <input type="id" name="id" value="">
-            <input type="submit" name="submit">
+            <input type="submit" name="submit" value="delete">
         </form>
         <div class="box3">
             <?php 
@@ -45,7 +45,7 @@ include "connect.php";
                 <?php
                     if (isset($_POST['submit'])) {
                         // sql to delete a record
-                        $sql = 'DELETE FROM leaderboard WHERE id= :id';
+                        $sql = 'DELETE FROM leaderBoard WHERE id= :id';
 
                         $pdo->prepare($sql)->execute([
                             ':id' => $_POST['id']
