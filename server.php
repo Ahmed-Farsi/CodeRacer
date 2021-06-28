@@ -1,9 +1,9 @@
 <?php
 
 $username = "";
-$email    = "";
 $errors = array(); 
 
+// $db = mysqli_connect('localhost', 'nsp', 'wart1drex*LIY2rern', 'nsp');
 $db = mysqli_connect('localhost', 'root', '', 'nsp');
 
 if (isset($_POST['login_user'])) {
